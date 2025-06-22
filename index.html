@@ -11,10 +11,13 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 100px 20px 80px;
+      padding-bottom: 80px;
+    }
+
+    .wrapper {
       max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 100px auto 0;
+      padding: 0 20px;
     }
 
     header {
@@ -59,17 +62,14 @@
       background-color: #0f3b3b;
       color: white;
       text-align: center;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      left: 0;
-      z-index: 1000;
       font-size: 0.8em;
       height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
+      margin-top: 60px;
+      width: 100%;
     }
 
     table {
@@ -114,7 +114,7 @@
       padding: 6px 14px;
       width: auto;
       font-size: 14px;
-      background-color: #1976d2;
+      background-color: #2196f3;
       color: white;
       border: none;
       border-radius: 6px;
@@ -123,7 +123,7 @@
     }
 
     button.btn:hover {
-      background-color: #1565c0;
+      background-color: #1976d2;
     }
 
     .btn-kirim {
@@ -158,8 +158,8 @@
         width: 100%;
       }
 
-      body {
-        padding: 100px 15px 80px;
+      .wrapper {
+        padding: 0 15px;
       }
     }
   </style>
@@ -173,84 +173,54 @@
     </div>
   </header>
 
-  <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; background-color: #f9f9f9;">
-  <strong>Catatan:</strong><br>
-  Pengakuan didapat dalam bentuk seperti:
-  <ol style="margin-top: 5px; padding-left: 20px;">
-    <li>Menjadi dosen tamu (visiting lecturer) di perguruan tinggi tingkat nasional/internasional.</li>
-    <li>Menjadi invited speaker pada pertemuan ilmiah tingkat nasional/internasional.</li>
-    <li>Menjadi staf ahli di lembaga tingkat nasional/internasional.</li>
-    <li>Menjadi editor atau mitra bestari pada jurnal nasional terakreditasi/jurnal internasional bereputasi.</li>
-    <li>Mendapat penghargaan atas prestasi dan kinerja di tingkat nasional/internasional.</li>
-  </ol>
-</div>
+  <div class="wrapper">
+    <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; background-color: #f9f9f9;">
+      <strong>Catatan:</strong><br>
+      Pengakuan didapat dalam bentuk seperti:
+      <ol style="margin-top: 5px; padding-left: 20px;">
+        <li>Menjadi dosen tamu (visiting lecturer) di perguruan tinggi tingkat nasional/internasional.</li>
+        <li>Menjadi invited speaker pada pertemuan ilmiah tingkat nasional/internasional.</li>
+        <li>Menjadi staf ahli di lembaga tingkat nasional/internasional.</li>
+        <li>Menjadi editor atau mitra bestari pada jurnal nasional terakreditasi/jurnal internasional bereputasi.</li>
+        <li>Mendapat penghargaan atas prestasi dan kinerja di tingkat nasional/internasional.</li>
+      </ol>
+    </div>
 
+    <form id="formDosen" action="https://script.google.com/macros/s/AKfycbzMCYzI6cUFix771QL0ySkslmaNkh5FAvfEPs1VZpERSYI_FDmutez9R43Wcm8nI92_/exec" method="POST">
+      <table>
+        <tr><td><label class="label-fix">Nama Lengkap</label></td><td><input type="text" name="nama" required /></td></tr>
+        <tr><td><label class="label-fix">NIDN</label></td><td><input type="text" name="nidn" required /></td></tr>
+        <tr><td><label class="label-fix">Jabatan Fungsional</label></td><td><input type="text" name="jabatan_fungsional" required /></td></tr>
+        <tr><td><label class="label-fix">Pangkat/Golongan</label></td><td><input type="text" name="pangkat_golongan" required /></td></tr>
+        <tr>
+          <td><label class="label-fix">Program Studi</label></td>
+          <td>
+            <select name="prodi" required>
+              <option value="">-- Pilih Program Studi --</option>
+              <option>Akuntansi S1</option><option>Anafarma D3</option><option>Farmasi S1</option><option>Hukum S1</option>
+              <option>Ilkom S1</option><option>Kebidanan D3</option><option>Kebidanan S1</option><option>Keperawatan D3</option>
+              <option>Keperawatan S1</option><option>Kesmas S1</option><option>Kesmas S2</option><option>Kimia S1</option>
+              <option>Manajemen S1</option><option>Manajemen S2</option><option>Psikologi S1</option><option>Perpustakaan S1</option>
+              <option>PG PAUD S1</option><option>PG SD S1</option><option>Profesi Apoteker</option><option>Profesi Bidan</option>
+              <option>Profesi Ners</option><option>Sisfor S1</option><option>TEM D3</option><option>TLM D3</option>
+            </select>
+          </td>
+        </tr>
+      </table>
 
-  <form id="formDosen" action="https://script.google.com/macros/s/AKfycbzMCYzI6cUFix771QL0ySkslmaNkh5FAvfEPs1VZpERSYI_FDmutez9R43Wcm8nI92_/exec" method="POST">
-    <table>
-      <tr>
-        <td><label class="label-fix">Nama Lengkap</label></td>
-        <td><input type="text" name="nama" required /></td>
-      </tr>
-      <tr>
-        <td><label class="label-fix">NIDN</label></td>
-        <td><input type="text" name="nidn" required /></td>
-      </tr>
-      <tr>
-        <td><label class="label-fix">Jabatan Fungsional</label></td>
-        <td><input type="text" name="jabatan_fungsional" required /></td>
-      </tr>
-      <tr>
-        <td><label class="label-fix">Pangkat/Golongan</label></td>
-        <td><input type="text" name="pangkat_golongan" required /></td>
-      </tr>
-      <tr>
-        <td><label class="label-fix">Program Studi</label></td>
-        <td>
-          <select name="prodi" required>
-            <option value="">-- Pilih Program Studi --</option>
-            <option>Akuntansi S1</option>
-            <option>Anafarma D3</option>
-            <option>Farmasi S1</option>
-            <option>Hukum S1</option>
-            <option>Ilkom S1</option>
-            <option>Kebidanan D3</option>
-            <option>Kebidanan S1</option>
-            <option>Keperawatan D3</option>
-            <option>Keperawatan S1</option>
-            <option>Kesmas S1</option>
-            <option>Kesmas S2</option>
-            <option>Kimia S1</option>
-            <option>Manajemen S1</option>
-            <option>Manajemen S2</option>
-            <option>Psikologi S1</option>
-            <option>Perpustakaan S1</option>
-            <option>PG PAUD S1</option>
-            <option>PG SD S1</option>
-            <option>Profesi Apoteker</option>
-            <option>Profesi Bidan</option>
-            <option>Profesi Ners</option>
-            <option>Sisfor S1</option>
-            <option>TEM D3</option>
-            <option>TLM D3</option>
-          </select>
-        </td>
-      </tr>
-    </table>
+      <div id="bidangContainer"></div>
 
-    <div id="bidangContainer"></div>
+      <button type="submit" class="btn btn-kirim">Kirim</button>
+    </form>
+  </div>
 
-    <button type="submit" class="btn btn-kirim">Kirim</button>
-  </form>
-
-  <footer>2025 Fa3Halawa</footer>
+  <footer>© 2025 Fa3</footer>
 
   <script>
     let count = 0;
 
     function tambahBidang() {
       count++;
-
       document.querySelectorAll('.bidang-box').forEach(div => {
         const tombolBar = div.querySelector('.tombol-bar');
         if (tombolBar) tombolBar.remove();
@@ -260,23 +230,11 @@
       div.className = 'bidang-box';
       div.innerHTML = `
         <table>
-          <tr>
-            <td><strong class="judul-bidang">Bidang Keahlian</strong></td>
-          </tr>
-          <tr>
-            <td><label>Bidang Keahlian</label></td>
-            <td><input type="text" name="bidang_keahlian_${count}" required></td>
-          </tr>
-          <tr>
-            <td><label>Rekognisi</label></td>
-            <td><input type="text" name="rekognisi_${count}" required></td>
-          </tr>
-          <tr>
-            <td><label>Tahun Perolehan</label></td>
-            <td><input type="number" name="tahun_${count}" required></td>
-          </tr>
+          <tr><td><strong class="judul-bidang">Bidang Keahlian</strong></td></tr>
+          <tr><td><label>Bidang Keahlian</label></td><td><input type="text" name="bidang_keahlian_${count}" required></td></tr>
+          <tr><td><label>Rekognisi</label></td><td><input type="text" name="rekognisi_${count}" required></td></tr>
+          <tr><td><label>Tahun Perolehan</label></td><td><input type="number" name="tahun_${count}" required></td></tr>
         </table>
-
         <div class="tombol-bar">
           <button type="button" class="btn" onclick="hapusBidang(this)">Cancel</button>
           <button type="button" class="btn" onclick="tambahBidang()">Tambah Bidang Keahlian</button>
